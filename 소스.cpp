@@ -1,4 +1,4 @@
-//2023111359 ÃÖ°¡À±
+//2023111359 ìµœê°€ìœ¤
 #include <iostream>
 using namespace std;
 
@@ -16,31 +16,31 @@ public:
         this->name = name;
         this->salary = salary;
     }
-    //º¯È¯¿¬»êÀÚ
+    //ë³€í™˜ì—°ì‚°ì
     operator int() const {
         return salary;
     }
-    //friend ÇÔ¼ö ¿¹¾à
+    //friend í•¨ìˆ˜ ì˜ˆì•½
     friend ostream& operator<<(ostream& os, const Employee& e);
 };
-//<<¿¬»êÀÚ ¿À¹ö·Îµù Àü¿ªÇÔ¼ö·Î Á¤ÀÇ
+//<<ì—°ì‚°ì ì˜¤ë²„ë¡œë”© ì „ì—­í•¨ìˆ˜ë¡œ ì •ì˜
 ostream& operator<<(ostream& os, const Employee& e) {
-    os << "È«±æ¼­ÀÇ salary = " << e.salary << endl;
+    os << e.name << "ì˜ salary = " << e.salary << endl;
     return os;
 }
 
 int main() {
-    Employee e1("È«±æµ¿", 100);
-    Employee e2("È«±æ¼­", 110);
+    Employee e1("í™ê¸¸ë™", 100);
+    Employee e2("í™ê¸¸ì„œ", 110);
 
     int salary = e1;
-    cout << "È«±æµ¿ÀÇ salary = " << salary << endl;
+    cout << "í™ê¸¸ë™ì˜ salary = " << salary << endl;
     cout << e2 << endl;
 
     if (e1 > e2)
-        cout << "È«±æµ¿ÀÇ ±Ş¿©°¡ ³ô´Ù" << endl;
+        cout << "í™ê¸¸ë™ì˜ ê¸‰ì—¬ê°€ ë†’ë‹¤" << endl;
     else
-        cout << "È«±æ¼­ÀÇ ±Ş¿©°¡ ³ô´Ù" << endl;
+        cout << "í™ê¸¸ì„œì˜ ê¸‰ì—¬ê°€ ë†’ë‹¤" << endl;
 
     return 0;
 }
